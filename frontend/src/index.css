@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    @apply min-h-screen bg-slate-950 text-slate-100 antialiased;
+    background:
+      radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.25) 0%, transparent 55%),
+      radial-gradient(circle at 90% 10%, rgba(236, 72, 153, 0.18) 0%, transparent 60%),
+      radial-gradient(circle at 20% 80%, rgba(34, 211, 238, 0.18) 0%, transparent 55%),
+      linear-gradient(135deg, rgba(15, 23, 42, 1) 0%, rgba(15, 23, 42, 0.92) 100%);
+  }
+
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  button {
+    @apply transition duration-200 ease-out transform hover:-translate-y-[1px] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-400 active:translate-y-[1px];
+  }
+
+  table {
+    @apply border-collapse;
+  }
+
+  thead th {
+    @apply tracking-wide uppercase text-xs font-semibold;
+  }
+
+  tbody tr {
+    @apply transition-colors duration-200;
+  }
+
+  tbody tr:hover {
+    @apply bg-white/80;
+  }
+}
+
+.glass-panel {
+  @apply bg-white/15 border border-white/20 backdrop-blur-xl shadow-2xl rounded-3xl;
+}
+
+.glass-card {
+  @apply bg-white/80 border border-white/40 backdrop-blur-xl shadow-xl rounded-2xl text-slate-900;
+}
+
+.floating-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(120px);
+  opacity: 0.35;
+  pointer-events: none;
+  animation: float 12s ease-in-out infinite;
+}
+
+.floating-orb--pink {
+  background: #ec4899;
+}
+
+.floating-orb--blue {
+  background: #6366f1;
+}
+
+.floating-orb--cyan {
+  background: #22d3ee;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(30px, -20px, 0) scale(1.05);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(148, 163, 184, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6366f1, #ec4899);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #4338ca, #db2777);
+}

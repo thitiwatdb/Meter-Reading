@@ -1,0 +1,17 @@
+Commands to run after pulling the latest changes:
+
+1. Navigate to the frontend directory:
+   cd frontend
+
+2. Install project dependencies (updates package-lock.json with new packages):
+   npm install
+
+3. (If npm install was already executed before pulling) explicitly install the new UI dependencies:
+   npm install antd @ant-design/icons
+
+4. Navigate to the backend directory:
+   cd ../backend
+
+5. Install backend dev dependency for auto reload:
+   npm install --save-dev nodemon
+   npm run dev  # used to run the dev server
